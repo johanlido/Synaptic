@@ -1,6 +1,6 @@
 # 🔐 Backend Authentication Workflow
 
-This workflow demonstrates building a secure, production-ready authentication system using the Synaptic.
+This workflow demonstrates building a secure, production-ready authentication system using the synaptic.
 
 ## 🎯 Scenario: Enterprise-Grade Authentication API
 

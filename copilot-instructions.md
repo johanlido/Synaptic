@@ -1,4 +1,4 @@
-# Synaptic AI Agent Instructions & Guardrails
+# synaptic AI Agent Instructions & Guardrails
 
 This document provides comprehensive guidelines for AI agents (GitHub Copilot, Claude, etc.) working within this professional development environment. These instructions ensure code quality, security, and compliance with industry standards.
 

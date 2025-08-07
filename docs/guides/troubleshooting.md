@@ -1,6 +1,6 @@
 # 🔧 Comprehensive Troubleshooting Guide
 
-This guide helps you diagnose and resolve common issues with the Synaptic across all platforms.
+This guide helps you diagnose and resolve common issues with the synaptic across all platforms.
 
 ## 🚨 Common Issues Quick Reference
 

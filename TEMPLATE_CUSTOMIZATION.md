@@ -1,4 +1,4 @@
-# Synaptic Template Customization Guide
+# synaptic Template Customization Guide
 
 This guide helps you customize the AI Development Environment Template for your specific needs.
 
@@ -9,7 +9,7 @@ This guide helps you customize the AI Development Environment Template for your 
 After creating your repository from this template, update these files:
 
 **README.md**
-- Replace all instances of `johanlido/Synaptic` with your repository path
+- Replace all instances of `johanlido/synaptic` with your repository path
 - Update the repository description and badges
 - Add your own contact information and support links
 - Customize the feature list based on what you plan to use
@@ -17,7 +17,7 @@ After creating your repository from this template, update these files:
 **Example replacements:**
 ```bash
 # Find and replace in README.md
-johanlido/Synaptic → your-username/your-repo-name
+johanlido/synaptic → your-username/your-repo-name
 ```
 
 ### 2. Environment Configuration

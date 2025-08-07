@@ -1,6 +1,6 @@
 # macOS Setup Guide
 
-Complete setup guide for Synaptic on macOS systems.
+Complete setup guide for synaptic on macOS systems.
 
 ## 🍎 Prerequisites
 
@@ -119,13 +119,13 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /Applications/Claude.
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp /Applications/Claude.app
 ```
 
-## 🚀 Synaptic Setup
+## 🚀 synaptic Setup
 
 ### 1. Clone and Setup
 ```bash
 # Clone the template repository
 git clone https://github.com/johanlido/Synaptic.git
-cd Synaptic
+cd synaptic
 
 # Make setup scripts executable
 chmod +x scripts/*.sh

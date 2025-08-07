@@ -1,9 +1,9 @@
-# Synaptic: AI Development Orchestrator
+# synaptic: AI Development Orchestrator
 
 [![Use this template](https://img.shields.io/badge/Use%20this%20template-2ea44f?style=for-the-badge)](https://github.com/johanlido/Synaptic/generate)
 [![Fork this repo](https://img.shields.io/badge/Fork%20this%20repo-blue?style=for-the-badge)](https://github.com/johanlido/Synaptic/fork)
 
-Transform your development workflow with an orchestrated AI ecosystem that delivers **10x faster prototyping** while maintaining enterprise-grade security. Synaptic integrates Claude Desktop, GitHub Copilot, and specialized MCP servers into a unified development experience.
+Transform your development workflow with an orchestrated AI ecosystem that delivers **10x faster prototyping** while maintaining enterprise-grade security. synaptic integrates Claude Desktop, GitHub Copilot, and specialized MCP servers into a unified development experience.
 
 **🚀 Quick Start**: Get running in 15 minutes | **🔧 Enterprise Ready** | **🔒 Security First**
 
@@ -19,9 +19,9 @@ Transform your development workflow with an orchestrated AI ecosystem that deliv
 
 ## 🎯 Overview
 
-This repository provides a **production-ready template** for implementing the AI development environment described in the "Professional AI Development Environment Setup Guide" blog post series. Synaptic represents the culmination of months of real-world development experience, refined through building everything from civic engagement platforms to enterprise applications.
+This repository provides a **production-ready template** for implementing the AI development environment described in the "Professional AI Development Environment Setup Guide" blog post series. synaptic represents the culmination of months of real-world development experience, refined through building everything from civic engagement platforms to enterprise applications.
 
-**What makes Synaptic special?** Traditional development environments force you to choose between power and simplicity. Synaptic eliminates that trade-off entirely by creating an orchestrated AI ecosystem where each component excels in its specific domain while contributing to a unified development experience.
+**What makes synaptic special?** Traditional development environments force you to choose between power and simplicity. synaptic eliminates that trade-off entirely by creating an orchestrated AI ecosystem where each component excels in its specific domain while contributing to a unified development experience.
 
 ### 🌟 **Key Benefits**
 
@@ -141,7 +141,7 @@ cp .env.example .env
 ## 📁 Repository Structure
 
 ```
-Synaptic/
+synaptic/
 ├── configs/                     # Configuration templates
 │   ├── claude-desktop/          # Claude Desktop configurations
 │   ├── vscode/                  # VSCode settings and extensions
@@ -286,5 +286,5 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 **Built for professional AI-assisted development workflows**
 
-*Synaptic implements the setup described in the "Professional AI Development Environment Setup Guide" blog post series.*
+*synaptic implements the setup described in the "Professional AI Development Environment Setup Guide" blog post series.*
 

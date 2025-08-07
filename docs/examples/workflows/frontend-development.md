@@ -1,6 +1,6 @@
 # 🎨 Frontend Development Workflow
 
-This workflow demonstrates how to use the Synaptic for efficient frontend development, from research to implementation.
+This workflow demonstrates how to use the synaptic for efficient frontend development, from research to implementation.
 
 ## 🎯 Scenario: Building a Modern React Dashboard
 
