@@ -1,6 +1,132 @@
 # synaptic AI Agent Instructions & Guardrails
 
+# AI Agent Instructions for Synaptic Development Environment
+
 This document provides comprehensive guidelines for AI agents (GitHub Copilot, Claude, etc.) working within this professional development environment. These instructions ensure code quality, security, and compliance with industry standards.
+
+**🧠 NEW: AI Personality-Aware Guardrails** - Based on empirical analysis of LLM coding behaviors, these guidelines adapt to different AI model characteristics to compensate for known weaknesses and leverage strengths.
+
+## 🤖 AI Model-Specific Guidelines
+
+### Claude Sonnet 4 (Senior Architect) Guardrails
+**Personality**: Highly verbose, comprehensive solutions
+**Strengths**: Complex architecture, thorough analysis
+**Weaknesses**: Over-engineering, excessive verbosity (370K LOC vs 120K average)
+
+**Specific Instructions:**
+- **LIMIT VERBOSITY**: Focus on essential code only, avoid over-engineering
+- **SECURITY FOCUS**: 34% of vulnerabilities are path-traversal - validate all file paths
+- **RESOURCE MANAGEMENT**: Always use try-with-resources patterns
+- **CONCISENESS**: If solution exceeds 100 lines, break into smaller functions
+
+```javascript
+// ✅ CORRECT: Concise, focused implementation
+const validatePath = (userPath) => {
+  if (!userPath || typeof userPath !== 'string') {
+    throw new Error('Invalid path provided');
+  }
+  return path.resolve(path.normalize(userPath));
+};
+
+// ❌ AVOID: Over-engineered, verbose solutions
+```
+
+### GPT-4o (Rapid Prototyper) Guardrails  
+**Personality**: Balanced approach, moderate complexity
+**Strengths**: Quick solutions, reasonable verbosity
+**Weaknesses**: Control flow mistakes (48% of bugs), exception handling gaps
+
+**Specific Instructions:**
+- **CONTROL FLOW VALIDATION**: Extra attention to complex conditional logic
+- **MANDATORY ERROR HANDLING**: Never ignore exceptions or error return values
+- **DOCUMENTATION**: Include inline comments for complex algorithms
+- **TESTING**: Always include basic test cases for control flow
+
+```javascript
+// ✅ CORRECT: Proper control flow and error handling
+try {
+  const result = await processData(input);
+  if (!result || result.status !== 'success') {
+    throw new Error(`Processing failed: ${result?.error || 'Unknown error'}`);
+  }
+  return result.data;
+} catch (error) {
+  logger.error('Data processing failed:', error);
+  throw error; // Re-throw after logging
+}
+
+// ❌ AVOID: Ignoring error conditions or complex nested logic
+```
+
+### Llama 3.2 90B (High-Risk Model) Guardrails
+**Personality**: Decent performance but highest security risks
+**Strengths**: Good algorithmic problem-solving
+**Weaknesses**: 70% BLOCKER vulnerabilities, poor engineering discipline
+
+**Specific Instructions:**
+- **MAXIMUM SECURITY**: Triple-check all security-sensitive code
+- **NO HARDCODED SECRETS**: 23.58% vulnerability rate for credentials
+- **INPUT VALIDATION**: Mandatory for all user inputs
+- **CODE REVIEW**: Require human review for all generated code
+
+```javascript
+// ✅ REQUIRED: Comprehensive security validation
+const validateAndSanitizeInput = (input) => {
+  // Input validation
+  if (!input || typeof input !== 'string') {
+    throw new ValidationError('Invalid input type');
+  }
+  
+  // Sanitization
+  const sanitized = input.trim().replace(/[<>]/g, '');
+  
+  // Length validation
+  if (sanitized.length > MAX_INPUT_LENGTH) {
+    throw new ValidationError('Input too long');
+  }
+  
+  return sanitized;
+};
+
+// ❌ NEVER: Direct use of user input without validation
+```
+
+### OpenCoder-8B (Efficient Generalist) Guardrails
+**Personality**: Minimal, efficient code
+**Strengths**: Concise solutions, good for optimization
+**Weaknesses**: Dead code generation (42.74%), security gaps
+
+**Specific Instructions:**
+- **DEAD CODE PREVENTION**: Remove all unused variables and functions
+- **SECURITY ENHANCEMENT**: Add comprehensive security patterns
+- **COMPLETENESS**: Ensure all edge cases are handled despite conciseness
+- **DOCUMENTATION**: Add comments to explain concise but complex logic
+
+```javascript
+// ✅ CORRECT: Efficient but complete implementation
+const processItems = (items) => {
+  return items
+    .filter(item => item?.isValid) // Remove invalid items
+    .map(item => ({
+      id: item.id,
+      name: sanitize(item.name), // Security: sanitize inputs
+      timestamp: Date.now()
+    }));
+};
+
+// ❌ AVOID: Overly concise code that sacrifices security or clarity
+```
+
+### Claude 3.7 Sonnet (Balanced Predecessor) Guardrails
+**Personality**: High documentation, stable patterns
+**Strengths**: 16.4% comment density, balanced approach
+**Weaknesses**: Potentially outdated patterns
+
+**Specific Instructions:**
+- **MODERN PATTERNS**: Use current best practices and APIs
+- **MAINTAIN DOCUMENTATION**: Leverage natural documentation strength
+- **SECURITY UPDATES**: Apply modern security patterns
+- **PERFORMANCE**: Update to current performance optimizations
 
 ## 🎯 Core Principles
 

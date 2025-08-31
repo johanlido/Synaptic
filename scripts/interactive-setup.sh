@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# AI MCP Template Interactive Setup Wizard
-# This script provides guided installation for all platforms
+# Synaptic Interactive Setup Wizard
+# AI Development Orchestrator with Personality-Aware Configuration
 
 set -e  # Exit on any error
 
@@ -21,9 +21,13 @@ ARROW="➜"
 ROCKET="🚀"
 GEAR="⚙️"
 LOCK="🔒"
+BRAIN="🧠"
+STAR="⭐"
 
-echo -e "${CYAN}${ROCKET} AI MCP Template Setup Wizard${NC}"
+echo -e "${CYAN}${BRAIN} Synaptic Setup Wizard${NC}"
+echo -e "${CYAN}AI Development Orchestrator${NC}"
 echo -e "${CYAN}===============================${NC}"
+echo -e "${BLUE}Transform your development workflow with intelligent AI orchestration${NC}"
 echo ""
 
 # Detect platform
@@ -155,6 +159,116 @@ choose_ai_stack() {
     else
         INSTALL_FIGMA=false
     fi
+    
+    echo ""
+}
+
+# NEW: AI Personality Selection
+select_ai_personality() {
+    echo -e "${BRAIN}${PURPLE} AI Personality Selection${NC}"
+    echo -e "${BLUE}Based on empirical analysis of 4,442+ coding tasks across leading LLMs${NC}"
+    echo ""
+    echo -e "${CYAN}Choose your primary development style:${NC}"
+    echo ""
+    echo -e "${STAR} 1) ${GREEN}Senior Architect${NC} - Complex, comprehensive enterprise solutions"
+    echo -e "   ${BLUE}Best for:${NC} Enterprise apps, system design, complex architecture"
+    echo -e "   ${YELLOW}Model:${NC} Claude Sonnet 4 (95.57% HumanEval performance)"
+    echo -e "   ${RED}Watch out for:${NC} Over-engineering, excessive verbosity"
+    echo ""
+    echo -e "${STAR} 2) ${GREEN}Rapid Prototyper${NC} - Quick, balanced development and iteration"
+    echo -e "   ${BLUE}Best for:${NC} MVPs, rapid prototyping, general development"
+    echo -e "   ${YELLOW}Model:${NC} GPT-4o (balanced approach, moderate complexity)"
+    echo -e "   ${RED}Watch out for:${NC} Control flow mistakes, exception handling gaps"
+    echo ""
+    echo -e "${STAR} 3) ${GREEN}Efficient Generalist${NC} - Minimal, optimized code"
+    echo -e "   ${BLUE}Best for:${NC} Code optimization, refactoring, performance tuning"
+    echo -e "   ${YELLOW}Model:${NC} OpenCoder-8B (most concise, 120K LOC vs 370K average)"
+    echo -e "   ${RED}Watch out for:${NC} Dead code generation, security gaps"
+    echo ""
+    echo -e "${STAR} 4) ${GREEN}Documentation Expert${NC} - Well-documented, stable solutions"
+    echo -e "   ${BLUE}Best for:${NC} Educational content, team collaboration, maintenance"
+    echo -e "   ${YELLOW}Model:${NC} Claude 3.7 Sonnet (16.4% comment density)"
+    echo -e "   ${RED}Watch out for:${NC} Potentially outdated patterns"
+    echo ""
+    echo -e "${STAR} 5) ${GREEN}Adaptive Orchestrator${NC} - Let Synaptic choose automatically"
+    echo -e "   ${BLUE}Best for:${NC} Mixed development tasks, learning optimal patterns"
+    echo -e "   ${YELLOW}Model:${NC} Task-based intelligent selection"
+    echo -e "   ${GREEN}Benefit:${NC} Optimal model for each specific task"
+    echo ""
+    
+    while true; do
+        read -p "$(echo -e "${ARROW} Select your development style (1-5): ")" choice
+        case $choice in
+            1)
+                AI_PERSONALITY="senior_architect"
+                AI_DISPLAY_NAME="Senior Architect"
+                PRIMARY_MODEL="claude-sonnet-4"
+                echo -e "${GREEN}${CHECK} Selected: Senior Architect (Claude Sonnet 4)${NC}"
+                break
+                ;;
+            2)
+                AI_PERSONALITY="rapid_prototyper"
+                AI_DISPLAY_NAME="Rapid Prototyper"
+                PRIMARY_MODEL="gpt-4o"
+                echo -e "${GREEN}${CHECK} Selected: Rapid Prototyper (GPT-4o)${NC}"
+                break
+                ;;
+            3)
+                AI_PERSONALITY="efficient_generalist"
+                AI_DISPLAY_NAME="Efficient Generalist"
+                PRIMARY_MODEL="opencoder-8b"
+                echo -e "${GREEN}${CHECK} Selected: Efficient Generalist (OpenCoder-8B)${NC}"
+                break
+                ;;
+            4)
+                AI_PERSONALITY="balanced_predecessor"
+                AI_DISPLAY_NAME="Documentation Expert"
+                PRIMARY_MODEL="claude-3.7-sonnet"
+                echo -e "${GREEN}${CHECK} Selected: Documentation Expert (Claude 3.7 Sonnet)${NC}"
+                break
+                ;;
+            5)
+                AI_PERSONALITY="adaptive_orchestrator"
+                AI_DISPLAY_NAME="Adaptive Orchestrator"
+                PRIMARY_MODEL="adaptive"
+                echo -e "${GREEN}${CHECK} Selected: Adaptive Orchestrator (Intelligent Selection)${NC}"
+                break
+                ;;
+            *)
+                echo -e "${RED}Invalid choice. Please select 1-5.${NC}"
+                ;;
+        esac
+    done
+    
+    echo ""
+    echo -e "${CYAN}Personality-Specific Guardrails Enabled:${NC}"
+    case $AI_PERSONALITY in
+        "senior_architect")
+            echo -e "${ARROW} Verbosity control to prevent over-engineering"
+            echo -e "${ARROW} Path traversal validation (34% vulnerability rate)"
+            echo -e "${ARROW} Resource management enforcement"
+            ;;
+        "rapid_prototyper")
+            echo -e "${ARROW} Control flow validation (48% bug rate)"
+            echo -e "${ARROW} Mandatory exception handling"
+            echo -e "${ARROW} API contract verification"
+            ;;
+        "efficient_generalist")
+            echo -e "${ARROW} Dead code removal (42.74% generation rate)"
+            echo -e "${ARROW} Security hardening (29.85% credential issues)"
+            echo -e "${ARROW} Completeness validation"
+            ;;
+        "balanced_predecessor")
+            echo -e "${ARROW} Pattern modernization"
+            echo -e "${ARROW} Security updates for XML handling"
+            echo -e "${ARROW} Documentation maintenance"
+            ;;
+        "adaptive_orchestrator")
+            echo -e "${ARROW} Task-based model selection"
+            echo -e "${ARROW} Dynamic guardrail application"
+            echo -e "${ARROW} Performance optimization"
+            ;;
+    esac
     
     echo ""
 }
@@ -298,6 +412,7 @@ show_next_steps() {
 main() {
     detect_platform
     validate_prerequisites
+    select_ai_personality
     choose_ai_stack
     setup_environment
     install_mcp_servers
