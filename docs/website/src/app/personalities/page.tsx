@@ -1,7 +1,11 @@
+'use client';
+
 import Link from 'next/link';
-import { CpuChipIcon, ShieldCheckIcon, LightBulbIcon, DocumentTextIcon, RocketLaunchIcon } from '@heroicons/react/24/outline';
+import { CpuChipIcon, ShieldCheckIcon, LightBulbIcon, DocumentTextIcon, RocketLaunchIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { useState } from 'react';
 
 export default function Personalities() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const personalities = [
     {
       id: 'senior_architect',
@@ -193,12 +197,14 @@ export default function Personalities() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Navigation */}
-      <nav className="relative z-10 px-6 py-4 border-b border-gray-800 bg-black/95 backdrop-blur-sm">
+      <nav className="relative z-50 px-6 py-4 border-b border-gray-800 bg-black/95 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <CpuChipIcon className="h-8 w-8 text-green-400" />
             <Link href="/" className="text-xl font-bold text-white">Synaptic</Link>
           </div>
+          
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link href="/docs" className="text-gray-300 hover:text-white transition-colors">
               Documentation
@@ -220,7 +226,66 @@ export default function Personalities() {
               GitHub
             </Link>
           </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="text-gray-300 hover:text-white p-2"
+              aria-label="Toggle mobile menu"
+            >
+              {mobileMenuOpen ? (
+                <XMarkIcon className="h-6 w-6" />
+              ) : (
+                <Bars3Icon className="h-6 w-6" />
+              )}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-sm border-b border-gray-800">
+            <div className="px-6 py-4 space-y-4">
+              <Link 
+                href="/docs" 
+                className="block text-gray-300 hover:text-white transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Documentation
+              </Link>
+              <Link 
+                href="/personalities" 
+                className="block text-white font-semibold py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                AI Personalities
+              </Link>
+              <Link 
+                href="/workflows" 
+                className="block text-gray-300 hover:text-white transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Workflows
+              </Link>
+              <Link 
+                href="/setup" 
+                className="block text-gray-300 hover:text-white transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Setup Guide
+              </Link>
+              <Link 
+                href="https://github.com/johanlido/Synaptic" 
+                className="block bg-gray-800 hover:bg-gray-700 border border-gray-600 text-white px-4 py-2 rounded-lg transition-colors text-center"
+                target="_blank"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                GitHub
+              </Link>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
