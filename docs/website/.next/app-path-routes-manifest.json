@@ -1,8 +1,8 @@
 {
   "/_not-found/page": "/_not-found",
   "/favicon.ico/route": "/favicon.ico",
-  "/page": "/",
   "/docs/page": "/docs",
+  "/page": "/",
   "/personalities/page": "/personalities",
   "/setup/page": "/setup",
   "/workflows/page": "/workflows"
