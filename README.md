@@ -1,7 +1,9 @@
-# 🧠 Synaptic - AI Development Orchestrator
+# Synaptic - AI Development Orchestrator Template
 
 [![Use this template](https://img.shields.io/badge/Use%20this%20template-2ea44f?style=for-the-badge)](https://github.com/johanlido/Synaptic/generate)
 [![Fork this repo](https://img.shields.io/badge/Fork%20this%20repo-blue?style=for-the-badge)](https://github.com/johanlido/Synaptic/fork)
+[![GitHub Pages](https://img.shields.io/badge/Documentation-GitHub%20Pages-brightgreen?style=for-the-badge)](https://johanlido.github.io/Synaptic/)
+[![CI/CD](https://img.shields.io/github/actions/workflow/status/johanlido/Synaptic/ci.yml?style=for-the-badge&label=CI%2FCD)](https://github.com/johanlido/Synaptic/actions)
 
 Transform your development workflow with **intelligent AI orchestration** that delivers **10x faster prototyping** while maintaining enterprise-grade security. Synaptic integrates Claude Desktop, GitHub Copilot, and specialized MCP servers with **AI personality-aware guardrails** based on empirical analysis of 4,442+ coding tasks.
 
@@ -9,14 +11,43 @@ Transform your development workflow with **intelligent AI orchestration** that d
 
 > **🎯 This is a template repository!** Click "Use this template" above to create your own copy, or fork it to contribute improvements.
 
+## 📋 Template Quick Start
+
+### Using This Template
+
+1. **Click "Use this template"** above or [create from template](https://github.com/johanlido/Synaptic/generate)
+2. **Name your repository** and choose visibility settings
+3. **Clone your new repository**:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+   cd YOUR_REPO_NAME
+   ```
+4. **Run the interactive setup**:
+   ```bash
+   chmod +x scripts/interactive-setup.sh
+   ./scripts/interactive-setup.sh
+   ```
+5. **Customize for your project** using the [Template Customization Guide](TEMPLATE_CUSTOMIZATION.md)
+
+### Template Features
+
+✅ **Complete AI Development Environment**  
+✅ **GitHub Actions CI/CD Pipeline**  
+✅ **Community Health Files** (Contributing, Code of Conduct, Security)  
+✅ **Issue & PR Templates**  
+✅ **Documentation Website** (GitHub Pages ready)  
+✅ **Cross-Platform Setup Scripts** (macOS, Linux, Windows/WSL)  
+✅ **Security Best Practices** built-in  
+✅ **AI Personality System** with intelligent orchestration  
+
 ## 🌟 Revolutionary AI Personality System
 
 **World's First AI Development Orchestrator** with personality-aware intelligence:
 
-- **🏗️ Senior Architect** (Claude Sonnet 4) - Complex enterprise solutions with verbosity control
+- **🏗️ Senior Architect** (Claude 3.5 Sonnet) - Complex enterprise solutions with verbosity control
 - **⚡ Rapid Prototyper** (GPT-4o) - Balanced development with control flow validation  
 - **🔧 Efficient Generalist** (OpenCoder-8B) - Minimal code with dead code prevention
-- **📚 Documentation Expert** (Claude 3.7 Sonnet) - High-quality docs with modern patterns
+- **📚 Documentation Expert** (Claude 3.5 Haiku) - High-quality docs with modern patterns
 - **🧠 Adaptive Orchestrator** - Intelligent task-based model selection
 
 **Based on Scientific Research**: Empirical analysis of LLM coding behaviors reveals distinct personalities with measurable strengths and weaknesses. Synaptic compensates for each model's specific vulnerabilities while leveraging their unique capabilities.

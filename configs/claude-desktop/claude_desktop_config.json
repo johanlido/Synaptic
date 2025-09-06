@@ -3,7 +3,7 @@
     "perplexity-server": {
       "command": "node",
       "args": [
-        "/ABSOLUTE/PATH/TO/perplexity-mcp/build/index.js"
+        "YOUR_PROJECT_PATH/mcp-servers/perplexity-mcp/build/index.js"
       ],
       "env": {
         "PERPLEXITY_API_KEY": "${PERPLEXITY_API_KEY}",
@@ -14,7 +14,7 @@
       "command": "uv",
       "args": [
         "--directory",
-        "/ABSOLUTE/PATH/TO/manus-mcp",
+        "YOUR_PROJECT_PATH/mcp-servers/manus-mcp",
         "run",
         "mcp_server.py"
       ],
@@ -39,9 +39,9 @@
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "/Users/${USER}/Desktop",
-        "/Users/${USER}/Downloads",
-        "/Users/${USER}/Documents/Projects"
+        "YOUR_HOME_DIRECTORY/Desktop",
+        "YOUR_HOME_DIRECTORY/Downloads",
+        "YOUR_HOME_DIRECTORY/Documents/Projects"
       ]
     },
     "github": {
@@ -63,6 +63,38 @@
       "env": {
         "BRAVE_API_KEY": "${BRAVE_API_KEY}"
       }
+    }
+  },
+  "_template_instructions": {
+    "description": "This is a template configuration file for Claude Desktop MCP servers",
+    "setup_instructions": [
+      "1. Replace YOUR_PROJECT_PATH with the absolute path to your project directory",
+      "2. Replace YOUR_HOME_DIRECTORY with your home directory path",
+      "3. Set up environment variables in your .env file",
+      "4. Run the setup script to automatically configure paths",
+      "5. Remove this _template_instructions section after setup"
+    ],
+    "platform_notes": {
+      "windows": "Use forward slashes (/) or escaped backslashes (\\\\) in paths",
+      "macos": "Paths typically start with /Users/username",
+      "linux": "Paths typically start with /home/username"
+    },
+    "environment_variables": {
+      "required": [
+        "PERPLEXITY_API_KEY",
+        "GITHUB_PERSONAL_ACCESS_TOKEN"
+      ],
+      "optional": [
+        "FIGMA_ACCESS_TOKEN",
+        "FIGMA_TEAM_ID",
+        "BRAVE_API_KEY",
+        "MANUS_SANDBOX_DIR",
+        "MANUS_GLOBAL_TIMEOUT",
+        "MANUS_BROWSER_HEADLESS",
+        "MANUS_GOOGLE_SEARCH_MAX_RESULTS",
+        "MANUS_LOG_LEVEL",
+        "PERPLEXITY_MODEL"
+      ]
     }
   }
 }

@@ -1,9 +1,9 @@
-# AI Personality Profiles for Synaptic
+# AI Personality Configuration for Synaptic Development Orchestrator
 # Based on empirical analysis of 4,442+ coding tasks across leading LLMs
 
 ai_personalities:
   senior_architect:
-    model: "claude-sonnet-4"
+    model: "claude-3-5-sonnet-20241022"
     display_name: "Senior Architect"
     description: "Comprehensive, verbose solutions for complex architecture"
     
@@ -44,7 +44,7 @@ ai_personalities:
       - "resource_management"
       
   rapid_prototyper:
-    model: "gpt-4o"
+    model: "gpt-4o-2024-11-20"
     display_name: "Rapid Prototyper"
     description: "Balanced approach for quick development and iteration"
     
@@ -85,9 +85,9 @@ ai_personalities:
       - "security_validation"
       
   efficient_generalist:
-    model: "opencoder-8b"
+    model: "opencoder-8b-instruct"
     display_name: "Efficient Generalist"
-    description: "Minimal, efficient code for optimization and refactoring"
+    description: "Minimal, optimized code with focus on performance"
     
     characteristics:
       verbosity: "low"           # 120K LOC for 4,442 tasks
@@ -125,9 +125,9 @@ ai_personalities:
       - "credential_detection"
       - "completeness_validation"
       
-  balanced_predecessor:
-    model: "claude-3.7-sonnet"
-    display_name: "Balanced Predecessor"
+  documentation_expert:
+    model: "claude-3-5-haiku-20241022"
+    display_name: "Documentation Expert"
     description: "Well-documented, stable solutions with high comment density"
     
     characteristics:
